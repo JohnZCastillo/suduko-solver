@@ -11,6 +11,7 @@ Object.keys(board.children).forEach((key) => {
 
   //prevent user from entering more than one character
   box.addEventListener("keydown", (event) => {
+    // get event key
     const data = event.key;
 
     // allow backspace

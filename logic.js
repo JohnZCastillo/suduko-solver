@@ -11,8 +11,15 @@ Object.keys(board.children).forEach((key) => {
 
   //prevent user from entering more than one character
   box.addEventListener("keydown", (event) => {
-    if (box.innerHTML.length > 0) {
+    const data = event.key;
+
+    // allow backspace
+    if (event.key === "Backspace") return;
+
+    // disallow numbers and another input if data has already been assign
+    if (box.innerHTML.length > 0 || !Number.isInteger(Number(data))) {
       event.preventDefault();
+      return;
     }
   });
 });
